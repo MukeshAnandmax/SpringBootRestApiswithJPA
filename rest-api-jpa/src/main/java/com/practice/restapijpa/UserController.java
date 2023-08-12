@@ -25,8 +25,8 @@ public class UserController {
         userRepository.save(user);
 
     }
-    @GetMapping(value = "/user_by_country")
-    public List<User> getUserByCountr(String country){
+    @GetMapping(value = "/user_by_country/{country}")
+    public List<User> getUserByCountry(@PathVariable(value = "country") String country){
        return userRepository.findByCountry(country);
     }
 }
